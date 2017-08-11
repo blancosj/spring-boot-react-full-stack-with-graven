@@ -22,3 +22,6 @@ A React project with webpack.
 It consists in a Docker Compose file that creates 2 containers. One for backend and other one for Nginx server.
 Nginx is resposible to server the webpack file and forward the requests from frontend to backend with URL /api/*.
 
+docker-compose up backend > frontend to create the containers and start them.
+docker-compoe down --rmi all > to stop and delete the containers. 
+
