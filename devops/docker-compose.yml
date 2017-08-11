@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  backend:
+    image: interactions/backend-service
+    ports: 
+      - "9000:9000"
+      - "9001:9001"
+  frontend:
+    image: nginx:stable
+    ports:
+      - "8080:8080"
+    links:
+      - backend
+    volumes:
+      - ../frontend/dist:/var/www:ro
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
