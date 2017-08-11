@@ -2,8 +2,9 @@
 
 This is an example project that consists in a frontend in NGINX / React and a backend in Spring Boot with Swagger.
 ```
-NGINX > url:/api/ :> backend   Spring Boot
-        url:/*    :> frontend  React / Webpack 
+NGINX > url:/*    :> frontend  React / Webpack 
+        url:/api/ :> backend   Spring Boot
+        
 ```
 ## Backend
 
