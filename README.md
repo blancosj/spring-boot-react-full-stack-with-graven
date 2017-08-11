@@ -1,16 +1,10 @@
 # Fullstack Project
 
 This is an example project that consists in a frontend in NGINX / React and a backend in Spring Boot with Swagger.
-
-                                        (Backend)
-                                   -------------------  
-                /api/ :> backend   |   Spring Boot   |
- ------------ /                     -------------------   
- |  NGINX   | 
- ------------ \                        (Frontend)
-                                   ------------------- 
-                /*    :> react     | React / Webpack |
-                                   -------------------
+```
+NGINX > /api/ :> backend   Spring Boot
+        /*    :> react     React / Webpack 
+```
 ## Backend
 
 Spring Boot service that uses Swagger Springfox to auto-generate the definition of the REST API.
