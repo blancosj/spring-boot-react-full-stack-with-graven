@@ -2,7 +2,7 @@ version: "3"
 
 services:
   backend:
-    image: paskot.com/backend-service
+    image: paskot.com/backend
     ports:
       - "9000:9000"
       - "9001:9001"

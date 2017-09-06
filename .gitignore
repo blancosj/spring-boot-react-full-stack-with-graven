@@ -1,3 +1,7 @@
+
+.idea
+dist
+
 # Compiled class file
 *.class
 
