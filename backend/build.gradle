@@ -1,16 +1,21 @@
 buildscript {
     repositories {
         mavenCentral()
+        jcenter()
     }
     dependencies {
-        classpath('org.springframework.boot:spring-boot-gradle-plugin:1.5.5.RELEASE')
-        classpath('se.transmode.gradle:gradle-docker:1.2')
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.5.5.RELEASE'
+        classpath 'com.bmuschko:gradle-docker-plugin:3.1.0'
     }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.10'
 }
 
 group = 'paskot.com'
 
-apply plugin: 'docker'
+apply plugin: 'com.bmuschko.docker-java-application'
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
@@ -40,13 +45,10 @@ dependencies {
     testCompile('junit:junit')
 }
 
-task buildDocker(type: Docker, dependsOn: build) {
-  applicationName = jar.baseName
-  dockerfile = file('Dockerfile')
-  doFirst {
-    copy {
-      from jar
-      into '${stageDir}/target'
+docker {
+    javaApplication {
+      baseImage = 'openjdk:8-jdk-alpine'
+      maintainer = 'Jose Blanco "git@paskot.com"'
+      ports = [9000, 9001]
     }
-  }
 }
