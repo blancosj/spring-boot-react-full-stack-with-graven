@@ -11,7 +11,7 @@ NGINX > url:/*    :> frontend  React / Webpack
 Spring Boot service that uses Swagger Springfox to auto-generate the definition of the REST API.
 In addition, it includes a Groovy integration to evaulate interpreted code in this programming language.
 
-It is built with Gradle. Aditionally it creates a Docker image by running the command "gradle build buildDocker".
+It is built with Gradle. Aditionally it creates a Docker image by running the command "gradle build dockerBuildImage".
 
 ## Frontend
 
